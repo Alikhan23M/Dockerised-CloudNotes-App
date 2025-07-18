@@ -33,8 +33,13 @@ jobs:
         run: |
           docker build ./server -t alikhandevs/cloudnotes-server:latest
           docker push alikhandevs/cloudnotes-server:latest
-      #Step 5: Triger deployement to able render to pull latest imagse
+      #Step 5: Triger client deployement to able render to pull latest imagse
       - name: Trigger Render Deploy Hook
         run: |
           curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+
+      #Step 5: Triger server deployement to able render to pull latest imagse
+      - name: Trigger Render Deploy Hook
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_SERVER_HOOK }}
 
