@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an axios instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // Local backend URL
+  baseURL: import.meta.env.VITE_API_URL || 'https://dockerised-cloudnotes-app.onrender.com/api', // Local backend URL
   headers: {
     'Content-Type': 'application/json'
   }
