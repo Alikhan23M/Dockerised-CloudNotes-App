@@ -12,8 +12,12 @@ dotenv.config();
 // Create Express app
 const app = express();
 
-// Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: ['https://dockerized-cloudnotes-client.onrender.com'],
+    
+  })
+);
 app.use(express.json());
 
 // Use morgan for logging requests and their details to the console
