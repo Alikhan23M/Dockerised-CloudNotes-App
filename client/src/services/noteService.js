@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 export const getNotes = async () => {
   try {
-    const response = await api.get('/api/notes');
+    const response = await api.get('/notes');
     return response.data;
   } catch (error) {
     toast.error('Failed to fetch notes');
@@ -13,7 +13,7 @@ export const getNotes = async () => {
 
 export const createNote = async (noteData) => {
   try {
-    const response = await api.post('/api/notes', noteData);
+    const response = await api.post('/notes', noteData);
     toast.success('Note created successfully');
     return response.data;
   } catch (error) {
@@ -24,7 +24,7 @@ export const createNote = async (noteData) => {
 
 export const updateNote = async (id, noteData) => {
   try {
-    const response = await api.put(`/api/notes/${id}`, noteData);
+    const response = await api.put(`/notes/${id}`, noteData);
     toast.success('Note updated successfully');
     return response.data;
   } catch (error) {
@@ -35,7 +35,7 @@ export const updateNote = async (id, noteData) => {
 
 export const deleteNote = async (id) => {
   try {
-    await api.delete(`/api/notes/${id}`);
+    await api.delete(`/notes/${id}`);
     toast.success('Note deleted successfully');
     return true;
   } catch (error) {
