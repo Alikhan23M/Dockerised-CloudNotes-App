@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ['https://dockerized-cloudnotes-client.onrender.com'],
+    origin: ['https://dockerized-cloudnotes-client.onrender.com','*'],
     
   })
 );
