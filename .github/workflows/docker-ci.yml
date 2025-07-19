@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       #####################################
-      # 🚀 CLIENT DEPLOYMENT
+      # CLIENT DEPLOYMENT
       #####################################
       - name: Check for client changes
         id: client_check
@@ -46,7 +46,7 @@ jobs:
           curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
 
       #####################################
-      # 🚀 SERVER DEPLOYMENT
+      #  SERVER DEPLOYMENT
       #####################################
       - name: Check for server changes
         id: server_check
